@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+</head>
+<body>
+    <h1>Welcome to our LookBack App</h1>
+    {% if message == 1 %}
+    <ul>
+        {% for user in html_users %}
+
+        <li>{{ user.id }} - {{ user.name }} - {{ user.age }}</li>
+        {% endfor %}
+    </ul>
+    <li><a href="/contact/add">wanna add a next entry</a></li>
+    {% else %}
+    <a href="/contact/add">Add the first Contact to see the list coming up</a>
+    {% endif %}
+</body>
+</html>

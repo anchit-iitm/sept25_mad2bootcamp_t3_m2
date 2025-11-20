@@ -2,14 +2,15 @@
 
 class Config():
     # some config as base
-
+    
     pass
 
 class developmentConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///our_db.sqlite3'
     SECRET_KEY = 'shhhhhh....... its very secret'
     SECURITY_TOKEN_AUTHENTICATION_HEADER = 'Authorization'
-    
+    DEBUG = True
+
     CACHE_TYPE = 'RedisCache'
     CACHE_REDIS_HOST = 'localhost'
     CACHE_REDIS_PORT = 6379

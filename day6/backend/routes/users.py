@@ -19,6 +19,7 @@ def users():
     if request.method == 'PUT':
         data = request.json
         updated_user = Person.update(data.get('id'), data.get('name'), data.get('age'))
+        # i can delete the cache for all users here
         return make_response(jsonify({"data": updated_user, "message": "User updated successfully"}), 202) if updated_user else make_response(jsonify({"message": "User not found"}), 404)
 
     if request.method == 'DELETE':
